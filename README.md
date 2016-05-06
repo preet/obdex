@@ -25,6 +25,7 @@ obdex requires a compiler with c++11 support. Additional dependencies are includ
 
 * [**duktape**](http://duktape.org) (MIT License): JavaScript engine
 * [**pugixml**](http://pugixml.org) (MIT License): For XML parsing
+* [**catch**](https://github.com/philsquared/Catch) (Boost License): Testing framework
 
 ***
 ### Building
