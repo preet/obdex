@@ -15,7 +15,7 @@ It also hasn't been rigorously tested in the real world and there's always the c
 **Use this library at your own risk!**
 ***
 ### History
-obdex is a rewrite of an older library called obdref that gets rid of the dependency on Qt
+obdex is a mostly-identical rewrite of an older library called obdref that gets rid of the dependency on Qt
 ***
 ### License
 obdex is licensed under the Apache License, version 2.0. For more information see the LICENSE file.
@@ -25,6 +25,7 @@ obdex requires a compiler with c++11 support. Additional dependencies are includ
 
 * [**duktape**](http://duktape.org) (MIT License): JavaScript engine
 * [**pugixml**](http://pugixml.org) (MIT License): For XML parsing
+
 ***
 ### Building
 QMake is used for development. The included project file builds tests:
@@ -62,14 +63,6 @@ First build obdex.pro using qmake. To run all tests:
 	--obdex-spec "SAEJ1979" \ // set spec to test
 	--obdex-protocol "ISO 15765 Standard Id" \ // set protocol to test
 	--obdex-address "Default" // set address to test
-	
-	./obdex_test TestUtils && \
-	./obdex_test TestBasic --obdex-definitions-file /home/preet/Dev/projects/obdex/definitions/test.xml && \
-	./obdex_test TestSpec \
-	--obdex-definitions-file /home/preet/Dev/projects/obdex/definitions/obd2.xml \
-	--obdex-spec "SAEJ1979" \
-	--obdex-protocol "ISO 15765 Standard Id" \
-	--obdex-address "Default"
 
 ***
 ### Help
