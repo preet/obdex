@@ -16,6 +16,7 @@
 
 #include <obdex/ObdexUtil.hpp>
 #include <cstdlib>
+#include <algorithm>
 
 namespace obdex
 {
@@ -132,15 +133,15 @@ namespace obdex
 
         if(!keep_empty)
         {
-            for(uint i=list_strings.size(); i-- > 0;)
-            {
-                if(list_strings[i].empty())
-                {
-                    auto it = list_strings.begin();
-                    std::advance(it,i);
-                    list_strings.erase(it);
-                }
-            }
+            list_strings.erase(
+                        std::remove_if(
+                            list_strings.begin(),
+                            list_strings.end(),
+                            [](std::string const &s){
+                                return s.empty();
+                            }),
+                        list_strings.end()
+                    );
         }
 
         return list_strings;
